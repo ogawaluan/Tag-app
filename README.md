@@ -25,12 +25,12 @@ cd "diretorio do projeto/servidor_proxy"
 
 #### Instale as Dependências:
 ```shell
-npm install
+yarn install
 ```
 
 #### Inicie o servidor:
 ```shell
-npm start
+yarn start
 ```
 ### O servidor iniciará na porta 3333
 <br />
