@@ -11,7 +11,7 @@ Se possível, ter um editor para trabalhar com o código como [VSCode](https://c
 Para iniciar o desenvolvimento, é necessário clonar o projeto do GitHub num diretório de sua preferência:
 ```shell
 cd "diretorio de sua preferencia"
-git clone https://github.com/condessalovelace/mavenquickstart
+git clone https://github.com/ogawaluan/Tag-app.git
 ```
 <br />
 
