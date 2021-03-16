@@ -41,6 +41,73 @@ const BookList: React.FC = () => {
     goodRead => goodRead.average_rating
   );
 
+  const orderedByTagEdition = booksTag.slice().sort((a, b) => {
+    const parseEditionA = a.edition.split(' de ').reverse();
+    const parseEditionB = b.edition.split(' de ').reverse();
+
+    switch (parseEditionA[1] && parseEditionB[1]) {
+      case "Janeiro":
+        parseEditionA[1] = "01";
+        parseEditionB[1] = "01";
+        break;
+      case "Fevereiro":
+        parseEditionA[1] = "02";
+        parseEditionB[1] = "02";
+        break;
+      case "Março":
+        parseEditionA[1] = "03";
+        parseEditionB[1] = "03";
+        break;
+      case "Abril":
+        parseEditionA[1] = "04";
+        parseEditionB[1] = "04";
+        break;
+      case "Maio":
+        parseEditionA[1] = "05";
+        parseEditionB[1] = "05";
+        break;
+      case "Junho":
+        parseEditionA[1] = "06";
+        parseEditionB[1] = "06";
+        break;
+      case "Julho":
+        parseEditionA[1] = "07";
+        parseEditionB[1] = "07";
+        break;
+      case "Agosto":
+        parseEditionA[1] = "08";
+        parseEditionB[1] = "08";
+        break;
+      case "Setembro":
+        parseEditionA[1] = "09";
+        parseEditionB[1] = "09";
+        break;
+      case "Outubro":
+        parseEditionA[1] = "10";
+        parseEditionB[1] = "10";
+        break;
+      case "Novembro":
+        parseEditionA[1] = "11";
+        parseEditionB[1] = "11";
+        break;
+      case "Dezembro":
+        parseEditionA[1] = "12";
+        parseEditionB[1] = "12";
+        break;
+      default:
+        null;
+        break;
+    }
+
+    const joinEditionA = parseEditionA.join('-');
+    const joinEditionB = parseEditionB.join('-');
+
+    const editionA = new Date(joinEditionA);
+    const editionB = new Date(joinEditionB);
+
+    return editionA > editionB ? -1 : 1;
+  });
+
   useEffect(() => {
     async function loadBooksTag(): Promise<void> {
       const data = await fetch('./livros.json', {
@@ -75,7 +142,7 @@ const BookList: React.FC = () => {
     <>
       <Header />
       <Content data-testid="content">
-        {booksTag.map((bookTag, index) =>
+        {orderedByTagEdition.map((bookTag, index) =>
           findISBNGoodReads.includes(bookTag.isbn) ? (
             <Card key={bookTag.objectId}>
               <StyledLink
