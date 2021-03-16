@@ -42,7 +42,7 @@ const BookDetails: React.FC = () => {
   const findBook = booksTag.filter(bookTag => bookTag.objectId === idParsed);
   const findISBN = findBook.map(book => book.isbn).toString();
   const findGoodReadsRating = Number(
-    goodReadsReviews.map(goodReadReview => goodReadReview.work_ratings_count),
+    goodReadsReviews.map(goodReadReview => goodReadReview.work_ratings_count)
   );
 
   useEffect(() => {

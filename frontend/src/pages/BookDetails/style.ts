@@ -35,17 +35,11 @@ export const Title = styled.div`
   }
 `;
 export const Descriptions = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   text-align: center;
   margin-left: 20px;
 `;
 
-export const TagDescriptions = styled.div`
-  display: flex;
-  align-items: center;
-`;
+export const TagDescriptions = styled.div``;
 
 export const BookDescription = styled.div`
   margin-left: 20px;

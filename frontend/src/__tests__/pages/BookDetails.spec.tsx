@@ -8,14 +8,14 @@ import Header from '../../components/Header';
 jest.mock('../../services/api');
 
 configure({ adapter: new Adapter() });
-describe('BookList Page', () => {
+describe('BookDetails Page', () => {
   let component;
 
   beforeEach(() => {
     component = shallow(<BookDetails />);
   });
 
-  it('bla', () => {
+  it('should be able to render', () => {
     expect(component.length).toBe(1);
   });
 

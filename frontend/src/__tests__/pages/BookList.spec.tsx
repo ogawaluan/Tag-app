@@ -30,7 +30,7 @@ describe('BookList Page', () => {
     expect(result).toBe('TAG');
   });
 
-  it('should be render a Header', () => {
+  it('should be render a Card', () => {
     const wrapper = shallow(
       <Card>
         <div>alo</div>
